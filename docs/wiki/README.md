@@ -12,7 +12,9 @@ This bounded wiki describes the checked-out `llama-swap` Go source at commit `21
 
 Configuration becomes a normalized `config.Config`; `server.Server` constructs local and peer routers, while the router owns model selection and process lifecycle. HTTP handlers forward model requests to a selected `process.Process`, and logs, events, metrics, and SQLite activity storage provide observability.
 
-See [architecture](architecture.md), [sequences](diagrams/sequences.md), and [getting started](getting-started.md).
+See [architecture](architecture.md), [sequences](diagrams/sequences.md),
+[getting started](getting-started.md), and the
+[native Windows deployment guide](../setup/windows-native.md).
 
 ## Module map
 

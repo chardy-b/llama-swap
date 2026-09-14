@@ -4,6 +4,9 @@
 
 The module declares Go `1.27.1` in [`go.mod`](../../go.mod). A runnable upstream inference command (for example `llama-server`) and a model file are required; llama-swap launches the command described by each model's `cmd` field.
 
+For a native Windows deployment with llama.cpp, CUDA, API-key setup, and
+Tailscale Serve, use the [native Windows setup guide](../setup/windows-native.md).
+
 ## Build
 
 From the repository root:
@@ -40,4 +43,6 @@ models:
 - `watch-config` enables reload behavior using [`internal/watcher`](../../internal/watcher).
 - `store.path` selects persistent SQLite; an empty path uses an in-memory store.
 
-For endpoint details see [api.md](api.md) and for internals see [architecture.md](architecture.md).
+For endpoint details see [api.md](api.md), for internals see
+[architecture.md](architecture.md), and for the target deployment see
+[native Windows setup](../setup/windows-native.md).
