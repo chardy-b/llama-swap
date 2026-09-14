@@ -1,0 +1,8 @@
+{
+  "repo_name": "llama-swap",
+  "source_path": "/mnt/HC_Volume_106820083/projects/llama-swap",
+  "source_sha": "21bc145a6fa6198c4d856fbb0830845c472b0ae4",
+  "generator": "hermes-agent code-wiki skill v0.1.0",
+  "modules_documented": ["config", "server", "router", "process", "store", "event", "watcher", "docagent"],
+  "scope": "bounded core-module source reference"
+}
