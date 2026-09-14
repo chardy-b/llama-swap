@@ -33,7 +33,7 @@ Clone the fork and run the checked-in preflight script:
 ```powershell
 git clone https://github.com/chardy-b/llama-swap.git C:\LocalAI\llama-swap
 Set-Location C:\LocalAI\llama-swap
-git switch ryli721/wil-191-initialize-fork
+git switch wil-191-initialize-fork
 powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\windows\preflight.ps1
 ```
 

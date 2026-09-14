@@ -85,6 +85,8 @@ Follow `docs/kb/README.md` frontmatter rules for knowledge-base guides.
 
 - Linear is the source of truth for scope, state, dependencies, and evidence.
 - Use one branch and pull request per implementation issue.
+- Name Linear branches `wil-<issue-number>-<short-slug>`; never prefix branch
+  names with a person's username, handle, or email identifier.
 - Commit messages follow the existing component-prefixed format and hard-wrap
   at 80 columns.
 - Do not commit secrets, model weights, local state files, generated build

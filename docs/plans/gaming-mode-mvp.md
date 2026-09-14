@@ -12,6 +12,9 @@ Build the smallest fork-specific vertical slice while keeping llama.cpp and the
 upstream router replaceable. Use real Linear dependency links and `Wave N`
 labels. One issue maps to one reviewable branch/PR.
 
+Name each branch `wil-<issue-number>-<short-slug>`. Do not use a personal
+username, handle, or email identifier as a branch prefix.
+
 ## Wave 1 — state contract and fork foundations
 
 ### 1. Implement persisted Gaming Mode state
