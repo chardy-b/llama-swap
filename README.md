@@ -291,6 +291,13 @@ Binaries are available on the [release](https://github.com/mostlygeek/llama-swap
 
 ## Configuration
 
+### Local Llama Server fork setup
+
+For the native Windows + llama.cpp + Tailscale deployment used by this fork,
+follow [`docs/setup/windows-native.md`](docs/setup/windows-native.md). It keeps
+llama-swap bound to localhost, publishes it only through Tailscale Serve, and
+starts with one verifiable GGUF model before adding unattended startup.
+
 ```yaml
 # minimum viable config.yaml
 
