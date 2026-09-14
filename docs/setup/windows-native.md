@@ -27,14 +27,15 @@ listener to authenticated tailnet devices over HTTPS. Do not bind llama-swap to
 
 ## Phase 1: collect the machine profile
 
-Open **PowerShell** on the Windows PC. Administrator rights are not needed.
-Clone the fork and run the checked-in preflight script:
+Open **PowerShell** on the Windows PC. The preflight itself does not require
+administrator rights. WinGet or the selected installer may prompt for elevation
+later, depending on machine policy. Clone the fork's default branch and run the
+checked-in preflight script:
 
 ```powershell
 git clone https://github.com/chardy-b/llama-swap.git C:\LocalAI\llama-swap
 Set-Location C:\LocalAI\llama-swap
-git switch wil-191-initialize-fork
-powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\windows\preflight.ps1
+powershell -NoProfile -ExecutionPolicy RemoteSigned -File .\scripts\windows\preflight.ps1
 ```
 
 If Git is not installed:
@@ -43,10 +44,11 @@ If Git is not installed:
 winget install --exact --id Git.Git
 ```
 
-Close and reopen PowerShell after installing Git. The preflight prints only
-non-secret machine facts: Windows version, architecture, RAM, free disk,
-NVIDIA GPU/driver/CUDA compatibility, Tailscale identity, and installed command
-paths. Share that output before choosing a llama.cpp backend or model.
+Close and reopen PowerShell after installing Git. The preflight prints no API
+keys or stored credentials. It does include operationally sensitive details such
+as the computer name, Tailscale identity/IP, hardware, installed command paths,
+and listening-process IDs. Review and redact those fields before sharing the
+output outside your trusted support channel.
 
 ## Phase 2: install Tailscale and llama-swap
 
@@ -69,8 +71,13 @@ tailscale version
 llama-swap -version
 ```
 
-Sign in to Tailscale if the PC is not already connected. This machine is
-currently visible in the tailnet as `desktop-q0s7jb6` (`100.109.130.89`).
+Sign in to Tailscale if the PC is not already connected. Discover its current
+tailnet identity locally rather than recording it in the repository:
+
+```powershell
+tailscale status --self
+tailscale ip -4
+```
 
 ## Phase 3: install the correct llama.cpp build
 

@@ -21,6 +21,7 @@ function Show-Command {
 
 Write-Host 'Local Llama Server Windows preflight'
 Write-Host 'This report contains no API keys or stored credentials.'
+Write-Warning 'It does contain operational details such as host and Tailscale identity, IP addresses, hardware, paths, and process IDs. Review and redact it before sharing outside a trusted support channel.'
 
 Write-Section 'Windows'
 $os = Get-CimInstance Win32_OperatingSystem
@@ -90,4 +91,4 @@ foreach ($port in @(8080, 5800, 5801, 5802)) {
 }
 
 Write-Section 'Result'
-Write-Host 'Preflight complete. Share this non-secret output to select the CUDA build, model quant, context size, and model directory.'
+Write-Host 'Preflight complete. Review and redact operational details before sharing the output to select the CUDA build, model quant, context size, and model directory.'
