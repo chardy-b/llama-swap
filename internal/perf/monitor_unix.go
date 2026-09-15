@@ -137,6 +137,9 @@ func tryNvidiaSmi(ctx context.Context, every time.Duration, logger *logmon.Monit
 	if _, err := exec.LookPath("nvidia-smi"); err != nil {
 		return nil, ErrNoGpuTool
 	}
+	if err := probeNvidiaSmi(ctx, "nvidia-smi"); err != nil {
+		return nil, err
+	}
 
 	sec := int(every.Seconds())
 	if sec < 1 {
